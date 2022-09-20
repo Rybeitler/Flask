@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .color1{
+            background-color: {{color1}};
+        }
+        .color2{
+            background-color: {{color2}};
+        }
+    </style>
+</head>
+    
+<body>
+    <h1 class="center" style="color: {{color1}}; background-color: {{color2}};">*** Checkerboard ***</h1>
+    <div class="container">
+        {% for i in range(num1) %}
+            <div class="row">
+                {% for x in range(num2) %}
+                    <div class="box col color{{ (i+x)%2+1 }}" ></div>
+                    <!-- original way, a bit wasteful -->
+                    {# {% if x%2==0 and i%2==0: %}
+                        <div class="box col" style="background-color: {{color1}};"></div>
+                    {% elif x%2==0 and not i%2==0: %}
+                        <div class="box col" style="background-color: {{color2}};"></div>
+                    {% elif not x%2==0 and i%2==0: %}
+                        <div class="box col" style="background-color: {{color2}};"></div>   
+                    {% else: %}
+                        <div class="box col" style="background-color: {{color1}};"></div>
+                    {% endif %} #}
+                    <!-- end og way -->
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

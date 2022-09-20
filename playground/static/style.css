@@ -1,0 +1,15 @@
+*{
+    margin: 0 auto;
+}
+
+
+h1{
+    color:red;
+}
+.box{
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 200px;
+    width:200px;
+    margin:10px;
+}

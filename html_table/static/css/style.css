@@ -1,0 +1,16 @@
+*{
+    margin:0 auto;
+    font-family: 'Bad Script', cursive;
+}
+table{
+    border: 2px solid #306998!important;
+    border-radius: 10px!important;
+}
+thead{
+    color:white;
+    background-color: #306998;
+    font-size: 2.3rem;
+}
+td{
+    font-size: 1.8rem;
+}
