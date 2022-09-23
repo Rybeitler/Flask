@@ -1,0 +1,42 @@
+*{
+    margin: 0 auto;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:10%;
+}
+h1{
+    font-size: 3rem;
+    margin-bottom:3%;
+}
+.counter{
+    margin-bottom:3%;
+}
+.btns{
+    display:flex;
+}
+
+.btn{
+    height:80px;
+    width:200px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.click{
+    background-color:#AAD7DC;
+    margin-right: 5px;
+}
+.reset{
+    background-color: #D42432;
+    color:white;
+}
+
+.lilBtn{
+    height:40px;
+    width:100px;
+    background-color: grey;
+    color:white;
+}

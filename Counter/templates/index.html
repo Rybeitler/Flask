@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Counter</h1>
+        <div class="visits">
+            <p>Visits: {{session.count}}</p>
+        </div>
+        <div class="counter">{% if "counter" in session: %}
+                                <p>Count: {{session.counter}}</p>
+                            {% else: %}
+                                <p>Count: 0</p>
+                            {% endif %}
+        </div>
+        <div class="btns">
+            <form action="/increment" method="post">
+                <button type="submit" class="btn click">Count +2</button>
+            </form>
+            <button onclick="window.location.href='/clear-session'" class="btn reset">Reset</button>
+        </div>
+        <div class="incrementBy">
+            <form action="/increment-by" method="post">
+                <h2>Increase Count by how much?</h2>
+                <label for="">Increment by:</label>
+                <input type="number" name="num">
+                <button type="submit" class="btn lilBtn">Go!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
