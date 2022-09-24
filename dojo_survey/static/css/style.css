@@ -1,0 +1,8 @@
+.container-sm{
+    background-color: lightgrey;
+    padding:20px 20px;
+}
+.lab{
+    text-decoration: underline;
+    font-weight: bold;
+}

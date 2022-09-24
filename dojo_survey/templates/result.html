@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Submitted Info</h1>
+        <div class="container-sm">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td class="lab">Name:</td>
+                        <td>{{session.data.name}}</td>
+                    </tr>
+                    <tr>
+                        <td class="lab">Location:</td>
+                        <td>{{session.data.location}}</td>
+                    </tr>
+                    <tr>
+                        <td class="lab">Favorite Language:</td>
+                        <td>{{session.data.language}}</td>
+                    </tr>
+                    {% if session.data.comments %}
+                    <tr>
+                        <td class="lab">Comments:</td>
+                        <td>{{session.data.comments}}</td>
+                    </tr>
+                    {% endif %}
+                    <tr>
+                        <td class="lab">Preferred OS:</td>
+                        <td>{{session.data.OS}}</td>
+                    </tr>
+                    {% if session.data.spam %}
+                    <tr>
+                        <td class="lab">You selected to receive spam!</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+            <button class="btn btn-primary"onclick="window.location.href='/reset'">Go Back</button>
+        </div>
+    </div>
+</body>
+</html>
